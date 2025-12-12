@@ -1,0 +1,12 @@
+# Online Library - Saksham
+# Requirements file for the project
+# Python 3.7+
+
+# tkinter is included with Python by default
+# No external packages required beyond Python standard library
+
+# For reference:
+# - tkinter: GUI framework (built-in)
+# - json: Data serialization (built-in)
+# - os: Operating system interface (built-in)
+# - datetime: Date/time utilities (built-in)

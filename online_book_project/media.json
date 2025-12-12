@@ -1,0 +1,98 @@
+[
+    {
+        "name": "1984",
+        "author": "George Orwell",
+        "date": "1949",
+        "category": "Novel"
+    },
+    {
+        "name": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "date": "1960",
+        "category": "Novel"
+    },
+    {
+        "name": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "date": "1813",
+        "category": "Novel"
+    },
+    {
+        "name": "One Hundred Years of Solitude",
+        "author": "Gabriel García Márquez",
+        "date": "1967",
+        "category": "Novel"
+    },
+    {
+        "name": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "date": "1866",
+        "category": "Novel"
+    },
+    {
+        "name": "Meditations",
+        "author": "Marcus Aurelius",
+        "date": "180",
+        "category": "Philosophy"
+    },
+    {
+        "name": "The Republic",
+        "author": "Plato",
+        "date": "375",
+        "category": "Philosophy"
+    },
+    {
+        "name": "Thus Spoke Zarathustra",
+        "author": "Friedrich Nietzsche",
+        "date": "1884",
+        "category": "Philosophy"
+    },
+    {
+        "name": "The Myth of Sisyphus",
+        "author": "Albert Camus",
+        "date": "1942",
+        "category": "Philosophy"
+    },
+    {
+        "name": "The Prince",
+        "author": "Niccolò Machiavelli",
+        "date": "1532",
+        "category": "Philosophy"
+    },
+    {
+        "name": "Leaves of Grass",
+        "author": "Walt Whitman",
+        "date": "1855",
+        "category": "Poetry"
+    },
+    {
+        "name": "The Waste Land",
+        "author": "T.S. Eliot",
+        "date": "1922",
+        "category": "Poetry"
+    },
+    {
+        "name": "Gitanjali",
+        "author": "Rabindranath Tagore",
+        "date": "1910",
+        "category": "Poetry"
+    },
+    {
+        "name": "The Raven and Other Poems",
+        "author": "Edgar Allan Poe",
+        "date": "1845",
+        "category": "Poetry"
+    },
+    {
+        "name": "Songs of Innocence and Experience",
+        "author": "William Blake",
+        "date": "1794",
+        "category": "Poetry"
+    },
+    {
+        "name": "hello",
+        "author": "me",
+        "date": "6969",
+        "category": "Poetry"
+    }
+]

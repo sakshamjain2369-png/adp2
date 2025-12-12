@@ -1,0 +1,41 @@
+"""
+QUICK START GUIDE - RUN THIS IN POWERSHELL
+===========================================
+
+1. Open PowerShell
+2. Change to the project directory:
+   cd "c:\Users\Saksham\Documents\advanced programming final\online_book_project"
+
+3. Run the app:
+   python main.py
+
+4. Try these actions:
+   - Click "+ New Book"
+   - Fill in: Title, Author, Year, pick a Category
+   - Click "Save Book"
+   - The book should appear in the table
+   - Select the book and click "Delete"
+   - Confirm deletion
+
+5. Run the backend test to verify file saves:
+   python full_test.py
+
+WHAT'S BEEN FIXED:
+==================
+✓ Storage path now resolves to project root (media.json will be found)
+✓ BookManager auto-persists changes (add/delete/edit save immediately)
+✓ GUI dialogs are now modal and grab focus
+✓ Add/Edit/Delete buttons have direct function references
+✓ All actions reload from disk after completion
+✓ Error handling shows what went wrong
+
+IF ADD/DELETE STILL NOT WORKING:
+================================
+Check:
+1. Is the GUI window still open when you try to add/delete?
+2. Do you see any error messages?
+3. Is media.json in the online_book_project folder?
+
+Send the error message and I'll fix it immediately.
+"""
+print(__doc__)
