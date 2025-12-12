@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saksham's Reading Room | Project Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #0b1224;
+      --muted: #8ca0c2;
+      --text: #e6eefc;
+      --accent: #19b07d;
+      --accent-2: #4dd0e1;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', 'Manrope', sans-serif;
+      background: radial-gradient(circle at 10% 20%, rgba(25,176,125,0.12), transparent 25%),
+                  radial-gradient(circle at 80% 0%, rgba(77,208,225,0.16), transparent 28%),
+                  linear-gradient(135deg, #0a0f1e, #0f172a 55%, #0a1224);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 22px 32px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+    }
+    h1 { margin: 0 0 12px; font-size: 38px; letter-spacing: -0.02em; }
+    h2 { margin: 0 0 12px; font-size: 26px; letter-spacing: -0.01em; }
+    p.lead { margin: 0 0 18px; color: var(--muted); max-width: 720px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .cta {
+      display: inline-flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn {
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      color: #0b1224;
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      box-shadow: var(--shadow);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .btn.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+      border-color: var(--border);
+      box-shadow: none;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(25,176,125,0.25); }
+    .btn.secondary:hover { border-color: rgba(255,255,255,0.15); }
+
+    .hero-card {
+      background: linear-gradient(150deg, rgba(25,176,125,0.14), rgba(77,208,225,0.12));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 0;
+      min-height: 260px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+      max-height: 360px;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15,23,42,0.28), rgba(15,23,42,0.65));
+      display: grid;
+      place-items: end;
+      padding: 14px;
+      color: rgba(255,255,255,0.78);
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .placeholder {
+      border: 2px dashed rgba(255,255,255,0.18);
+      border-radius: 14px;
+      width: 100%;
+      height: 100%;
+      min-height: 230px;
+      background: rgba(255,255,255,0.03);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      text-align: center;
+      padding: 14px;
+    }
+
+    main { max-width: 1180px; margin: 0 auto; padding: 0 22px 60px; }
+    section { margin: 42px 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow);
+    }
+    .muted { color: var(--muted); font-size: 15px; }
+    ul { padding-left: 18px; margin: 10px 0 0; color: var(--muted); }
+    li { margin: 6px 0; }
+
+    .tag { display: inline-block; padding: 6px 10px; border-radius: 10px; background: rgba(255,255,255,0.06); color: var(--text); font-size: 12px; margin: 4px 6px 0 0; border: 1px solid var(--border); }
+    .flex-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 14px; }
+    .stat { padding: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px; }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; color: var(--text); }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); font-size: 14px; }
+    th { color: var(--muted); font-weight: 600; letter-spacing: 0.01em; }
+
+    @media (max-width: 900px) {
+      header { grid-template-columns: 1fr; padding: 32px 18px 18px; }
+      .hero-card { min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <span class="pill">Saksham's Reading Room · Docs</span>
+      <h1>Modern Library Workspace</h1>
+      <p class="lead">A Tkinter-powered library app with clean UI, JSON-backed storage, and a focused backend for filtering, search, sort, and inline CRUD operations.</p>
+      <div class="cta">
+        <a class="btn" href="../online_book_project/main.py">Open App Entry</a>
+        <a class="btn secondary" href="../online_book_project/README.md">Project README</a>
+      </div>
+      <div class="flex-row" style="margin-top:14px;">
+        <span class="tag">Backend · Python</span>
+        <span class="tag">Frontend · Tkinter</span>
+        <span class="tag">Storage · JSON</span>
+        <span class="tag">Tests · Pytest</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img class="hero-img" src="assets/library-ui.png" alt="Saksham's Reading Room GUI screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <div class="hero-overlay">Saksham's Reading Room · GUI</div>
+      <div class="placeholder" style="display:none;">Screenshot not found. Place an image at <code>docs/assets/library-ui.png</code>.</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <p class="muted">"Saksham's Reading Room" is a desktop library manager. The frontend (Tkinter) offers a modern sidebar + table layout; the backend handles search, filter, sort, add, delete, and update; storage persists everything to a JSON file so changes survive restarts.</p>
+      <div class="stat-row">
+        <div class="stat"><strong>Frontend</strong><div class="muted">Tkinter treeview UI with search, filters, sort, inline add/edit/delete.</div></div>
+        <div class="stat"><strong>Backend</strong><div class="muted">BookManager orchestrates filtering, searching, sorting, CRUD, and stats.</div></div>
+        <div class="stat"><strong>Storage</strong><div class="muted">BookStorage reads/writes JSON (`media.json`) with project-root resolution.</div></div>
+        <div class="stat"><strong>Data</strong><div class="muted">Fields: name, author, date (year), category (Novel/Philosophy/Poetry).</div></div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <h2>Architecture</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Backend · `BookManager`</h3>
+          <p class="muted">Located at `backend/book_manager.py`. Owns business logic:</p>
+          <ul>
+            <li>Get all books; filter by category; search by name (case-insensitive).</li>
+            <li>Sort by year (newest-first or oldest-first).</li>
+            <li>Add, delete, update books with immediate persistence.</li>
+            <li>Compute counts for categories: total, novels, philosophy, poetry.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Frontend · `ModernLibraryGUI`</h3>
+          <p class="muted">Located at `frontend/gui.py`. Tkinter UI with:</p>
+          <ul>
+            <li>Sidebar navigation for All, Novels, Philosophy, Poetry.</li>
+            <li>Search-as-you-type input; category + sort controls.</li>
+            <li>Treeview table for Title/Author/Year/Category; right-click menu.</li>
+            <li>Inline add/edit/delete form plus modal add dialog.</li>
+            <li>Status + counters; save button to persist quickly.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Storage · `BookStorage`</h3>
+          <p class="muted">Located at `storage/storage.py`. Handles persistence:</p>
+          <ul>
+            <li>Resolves relative paths to project root (`media.json`).</li>
+            <li>Load books from JSON into memory.</li>
+            <li>Save books back to JSON with indentation.</li>
+            <li>Expose `get_books` / `set_books` for managers/UI.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-model">
+      <h2>Data Model</h2>
+      <p class="muted">Books live in `media.json` as a JSON array of objects.</p>
+      <table>
+        <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>name</td><td>string</td><td>Title of the book</td></tr>
+          <tr><td>author</td><td>string</td><td>Author name</td></tr>
+          <tr><td>date</td><td>string or int</td><td>Publication year (e.g., "1990")</td></tr>
+          <tr><td>category</td><td>string</td><td>Novel | Philosophy | Poetry (defaults to Novel)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="features">
+      <h2>Feature Highlights</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Search & Filter</h3>
+          <p class="muted">Instant search on title; quick filters by category; combined with sort toggles.</p>
+        </div>
+        <div class="card">
+          <h3>Sorting</h3>
+          <p class="muted">Newest-first or oldest-first based on year; integrated with category filters.</p>
+        </div>
+        <div class="card">
+          <h3>Inline CRUD</h3>
+          <p class="muted">Add, edit, delete directly from the inline form or via context menu; persists immediately.</p>
+        </div>
+        <div class="card">
+          <h3>Persistent JSON</h3>
+          <p class="muted">All changes saved to `media.json`; safe for small to medium personal collections.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tests">
+      <h2>Tests</h2>
+      <p class="muted">Pytest-based coverage across storage, backend, and frontend.</p>
+      <div class="grid">
+        <div class="card"><strong>Storage</strong><p class="muted">`tests/test_storage.py` — ensures JSON load/save and year ordering logic work as expected.</p></div>
+        <div class="card"><strong>Backend</strong><p class="muted">`tests/test_book_manager.py` — verifies add and retrieval flows.</p></div>
+        <div class="card"><strong>Frontend</strong><p class="muted">`tests/test_gui.py` — instantiates the Tkinter UI and asserts book rows render in the treeview.</p></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat">Run: <code>pytest tests/ -v</code></div>
+        <div class="stat">Requires: Python 3.7+, Tkinter (standard library)</div>
+      </div>
+    </section>
+
+    <section id="usage">
+      <h2>How to Run</h2>
+      <div class="card">
+        <ol style="margin:0 0 12px 18px; color: var(--muted);">
+          <li>Install Python 3.7+ (Tkinter included on most installs).</li>
+          <li>From project root: <code>python online_book_project/main.py</code></li>
+          <li>Library data lives in <code>online_book_project/media.json</code>. Keep it alongside <code>main.py</code>.</li>
+        </ol>
+        <div class="muted">Tip: Back up <code>media.json</code> before large edits. Avoid manual edits while the app is running.</div>
+      </div>
+    </section>
+
+    <section id="contribute">
+      <h2>Extend & Improve</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Ideas</h3>
+          <ul>
+            <li>Add cover images and display thumbnails in a sidebar.</li>
+            <li>CSV/Excel import-export for bulk management.</li>
+            <li>SQLite backend for larger catalogs and multi-user use.</li>
+            <li>Ratings, reading history, and custom tags.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Where to start</h3>
+          <ul>
+            <li>`frontend/gui.py` for UI adjustments and new controls.</li>
+            <li>`backend/book_manager.py` for new filters/sorts/analytics.</li>
+            <li>`storage/storage.py` to evolve data format or add migrations.</li>
+            <li>`tests/` to keep quality in check as features grow.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
