@@ -171,9 +171,9 @@
       </div>
     </div>
     <div class="hero-card">
-      <img class="hero-img" src="assets/library-ui.png" alt="Saksham's Reading Room GUI screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <img class="hero-img" src="assets/Screenshot 2025-12-12 215946.png" alt="Main library UI" onerror="this.style.display='none'; document.getElementById('hero-fallback').style.display='grid';">
       <div class="hero-overlay">Saksham's Reading Room · GUI</div>
-      <div class="placeholder" style="display:none;">Screenshot not found. Place an image at <code>docs/assets/library-ui.png</code>.</div>
+      <div id="hero-fallback" class="placeholder" style="display:none;">Screenshot not found. Ensure <code>docs/assets/Screenshot 2025-12-12 215946.png</code> exists.</div>
     </div>
   </header>
 
@@ -186,6 +186,22 @@
         <div class="stat"><strong>Backend</strong><div class="muted">BookManager orchestrates filtering, searching, sorting, CRUD, and stats.</div></div>
         <div class="stat"><strong>Storage</strong><div class="muted">BookStorage reads/writes JSON (`media.json`) with project-root resolution.</div></div>
         <div class="stat"><strong>Data</strong><div class="muted">Fields: name, author, date (year), category (Novel/Philosophy/Poetry).</div></div>
+      </div>
+    </section>
+
+    <section id="screenshots">
+      <h2>Screenshots</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Main Interface</h3>
+          <img src="assets/Screenshot 2025-12-12 215946.png" alt="Main library UI" style="width:100%; border-radius:12px; border:1px solid var(--border);">
+          <p class="muted" style="margin-top:8px;">Sidebar navigation, search, filters, sort, and table of books.</p>
+        </div>
+        <div class="card">
+          <h3>New Book Dialog</h3>
+          <img src="assets/Screenshot 2025-12-12 222717.png" alt="New Book modal dialog" style="width:100%; border-radius:12px; border:1px solid var(--border);">
+          <p class="muted" style="margin-top:8px;">Dialog for adding books: title, author, year, category with action buttons.</p>
+        </div>
       </div>
     </section>
 
