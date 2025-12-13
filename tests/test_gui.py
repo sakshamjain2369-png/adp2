@@ -1,6 +1,12 @@
 import json
+import os
+import sys
 import tkinter as tk
 import pytest
+
+# Add online_book_project to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'online_book_project'))
+
 from storage.storage import BookStorage
 from backend.book_manager import BookManager
 from frontend.gui import ModernLibraryGUI
@@ -13,12 +19,10 @@ class TestModernLibraryGUIDisplaysBooks:
         """Test that GUI initializes and correctly displays books from storage"""
         # Prepare test JSON with sample books
         fname = str(tmp_path / "media.json")
-        data = {
-            "books": [
-                {"title": "Python Crash Course", "author": "Eric Matthes", "year": 2015, "genre": "Programming"},
-                {"title": "Clean Code", "author": "Robert Martin", "year": 2008, "genre": "Programming"}
-            ]
-        }
+        data = [
+            {"name": "Python Crash Course", "author": "Eric Matthes", "date": "2015", "category": "Novel"},
+            {"name": "Clean Code", "author": "Robert Martin", "date": "2008", "category": "Novel"}
+        ]
         with open(fname, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
         

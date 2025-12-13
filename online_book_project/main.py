@@ -32,7 +32,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Change directory and run tests
-os.chdir(r"c:\Users\Saksham\Documents\adp2")
-os.system("pytest tests/ -v")

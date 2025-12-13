@@ -1,5 +1,11 @@
 import json
+import os
+import sys
 import pytest
+
+# Add online_book_project to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'online_book_project'))
+
 from storage.storage import BookStorage
 from backend.book_manager import BookManager
 
@@ -21,19 +27,19 @@ class TestBookManagerAddAndList:
         
         # Add a new book
         new_book = {
-            "title": "Test Driven Development",
+            "name": "Test Driven Development",
             "author": "Kent Beck",
-            "year": 2003,
-            "genre": "Technology"
+            "date": "2003",
+            "category": "Novel"
         }
         manager.add_book(new_book)
         
         # Retrieve and verify
-        books = manager.get_books()
+        books = manager.get_all_books()
         assert len(books) > 0
-        assert any(b.get("title") == "Test Driven Development" for b in books)
+        assert any(b.get("name") == "Test Driven Development" for b in books)
         
         # Verify the book has all expected fields
-        added_book = [b for b in books if b.get("title") == "Test Driven Development"][0]
+        added_book = [b for b in books if b.get("name") == "Test Driven Development"][0]
         assert added_book["author"] == "Kent Beck"
-        assert added_book["year"] == 2003
+        assert added_book["date"] == "2003"
