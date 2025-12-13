@@ -15,6 +15,7 @@ class TestBookStorageLoadSave:
     
     def test_load_and_save_books(self, tmp_path):
         """Test that BookStorage can load and save books correctly"""
+        print("\n[RUNNING] test_storage.py - Testing BookStorage load/save functionality")
         # Create test JSON with books
         data = [
             {"name": "Ancient Book", "author": "Unknown", "date": "875", "category": "Novel"},
@@ -47,3 +48,4 @@ class TestBookStorageLoadSave:
         
         assert len(updated) == 4
         assert updated[3]["name"] == "New Book"
+        print("[PASSED] test_storage.py - All storage tests completed successfully ✅")

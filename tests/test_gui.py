@@ -17,6 +17,7 @@ class TestModernLibraryGUIDisplaysBooks:
     
     def test_gui_displays_books_from_storage(self, tmp_path):
         """Test that GUI initializes and correctly displays books from storage"""
+        print("\n[RUNNING] test_gui.py - Testing ModernLibraryGUI initialization and display")
         # Prepare test JSON with sample books
         fname = str(tmp_path / "media.json")
         data = [
@@ -53,5 +54,6 @@ class TestModernLibraryGUIDisplaysBooks:
                     "GUI should display at least one of the test books"
             else:
                 pytest.skip("Treeview widget not found in GUI")
+            print("[PASSED] test_gui.py - All GUI tests completed successfully ✅")
         finally:
             root.destroy()
